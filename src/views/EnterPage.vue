@@ -15,6 +15,12 @@
         <img class="logo" src="../img/LOGO.png" />
         <div class="title" style="color:#47c0e8">凯文</div>
         <div class="title" style="color:#ffb05b">云客服</div>
+        <div
+          class="title"
+          style="color:#ffffff;float:right;margin-right:20px;font-weight: 400;font-size:25px"
+        >
+          www.KevCCS.com
+        </div>
         <el-menu-item index="1" route="/" class="item">
           主页
         </el-menu-item>
@@ -29,7 +35,7 @@
         </el-menu-item>
       </el-menu>
     </el-header>
-    <el-main class=".el-main" style="padding:0px;position:relative">
+    <el-main class=".el-main" style="padding:0px;position:relative;">
       <router-view></router-view>
     </el-main>
   </el-container>
@@ -62,6 +68,7 @@ export default {
   margin: 0;
   padding: 0;
   color: white;
+  user-select: none;
 }
 
 .logo {

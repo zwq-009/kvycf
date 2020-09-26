@@ -1,15 +1,24 @@
 <template>
   <div class="mainBackGround">
     <div class="boxOuter">
-      <el-carousel height="600px" class="zmd" arrow="never" trigger="click">
+      <el-carousel
+        height="600px"
+        class="zmd"
+        arrow="never"
+        trigger="click"
+        number="4000"
+      >
         <el-carousel-item class="zmdItem">
-          <el-button>123</el-button>
+          <div class="zmdText">一站式客服管理<br /><br />大容量数据储存</div>
+          <el-button class="zmdButton" type="primary" round>
+            获取解决方案
+          </el-button>
         </el-carousel-item>
         <el-carousel-item>
-          <el-button>456</el-button>
+          <el-button class="zmdButton" type="success" round>成为客服</el-button>
         </el-carousel-item>
         <el-carousel-item>
-          <el-button>789</el-button>
+          <el-button class="zmdButton" type="warning" round>加入我们</el-button>
         </el-carousel-item>
       </el-carousel>
       <div class="loginIntry">
@@ -46,18 +55,72 @@
       </div>
     </div>
     <el-drawer
-      title="我是标题"
+      title="客服登录"
       :visible.sync="ServiceLogin"
       :with-header="false"
       style="z-index:990"
     >
+      <div class="loginDIV">
+        <img src="../../img/LOGO.png" style="width:255px;height:140px;" />
+        <div class="enterTitle" style="font-size:30px">客服登录入口</div>
+        <el-input
+          class="loginInput"
+          v-model="ServiceAcc"
+          placeholder="请输入客服账号"
+        ></el-input>
+        <el-input
+          class="loginInput"
+          v-model="ServicePwd"
+          placeholder="请输入账号密码"
+          show-password
+        ></el-input>
+        <el-input
+          class="loginInput"
+          v-model="ServiceVerify"
+          placeholder="请输入验证码"
+        ></el-input>
+        <img src="../../img/yzm.png" class="loginYzm" />
+        <label class="loginYzmButton"
+          >看不清，换一张<i class="el-icon-refresh-left"></i
+        ></label>
+        <el-button type="primary" class="enterButton" style="margin-top:30px">
+          <div class="enterButtonText">登录</div>
+        </el-button>
+      </div>
     </el-drawer>
     <el-drawer
-      title="我是标题"
+      title="管理员登录"
       :visible.sync="AdminLogin"
       :with-header="false"
       style="z-index:990"
     >
+      <div class="loginDIV">
+        <img src="../../img/LOGO.png" style="width:255px;height:140px;" />
+        <div class="enterTitle" style="font-size:30px">管理员登录入口</div>
+        <el-input
+          class="loginInput"
+          v-model="ServiceAcc"
+          placeholder="请输入管理员账号"
+        ></el-input>
+        <el-input
+          class="loginInput"
+          v-model="ServicePwd"
+          placeholder="请输入账号密码"
+          show-password
+        ></el-input>
+        <el-input
+          class="loginInput"
+          v-model="ServiceVerify"
+          placeholder="请输入验证码"
+        ></el-input>
+        <img src="../../img/yzm.png" class="loginYzm" />
+        <label class="loginYzmButton"
+          >看不清，换一张<i class="el-icon-refresh-left"></i
+        ></label>
+        <el-button type="primary" class="enterButton" style="margin-top:30px">
+          <div class="enterButtonText">登录</div>
+        </el-button>
+      </div>
     </el-drawer>
   </div>
 </template>
@@ -67,7 +130,13 @@ export default {
   data() {
     return {
       ServiceLogin: false,
-      AdminLogin: false
+      AdminLogin: false,
+      ServiceAcc: '',
+      ServicePwd: '',
+      ServiceVerify: '',
+      AdminAcc: '',
+      AdminPwd: '',
+      AdminVerify: ''
     }
   },
   methods: {}
@@ -91,11 +160,45 @@ export default {
   height: 100%;
   min-width: 1400px;
 }
+
 .zmd {
   position: absolute;
   top: 50%;
   margin-top: -300px;
   width: 900px;
+}
+
+.el-carousel__item:nth-child(1) {
+  background-image: url('../../img/EnterImage1.png');
+  background-size: cover;
+}
+
+.el-carousel__item:nth-child(2) {
+  background-image: url('../../img/EnterImage1.png');
+  background-size: cover;
+}
+.el-carousel__item:nth-child(3) {
+  background-image: url('../../img/EnterImage2.png');
+  background-size: cover;
+}
+
+.zmdButton {
+  position: absolute;
+  top: 530px;
+  left: 570px;
+  width: 260px;
+  height: 55px;
+}
+
+.zmdText {
+  position: absolute;
+  left: 500px;
+  top: 50px;
+  opacity: 0.7;
+
+  font-size: 50px;
+  font-weight: 900;
+  font-style: oblique;
 }
 
 .loginIntry {
@@ -112,17 +215,6 @@ export default {
   align-content: center;
 }
 
-.el-carousel__item:nth-child(1) {
-  background-color: #99a9bf;
-}
-
-.el-carousel__item:nth-child(2) {
-  background-color: #d3dce6;
-}
-.el-carousel__item:nth-child(3) {
-  background-color: blue;
-}
-
 .logoImage {
   margin-top: 50px;
   width: 309px;
@@ -136,6 +228,7 @@ export default {
   margin: 0;
   margin-top: 10px;
   padding: 0;
+  user-select: none;
 }
 .enterButton {
   margin-top: 30px;
@@ -145,8 +238,32 @@ export default {
 .enterButtonText {
   font-family: NSimSun;
   font-size: 30px;
-  font-weight: 500;
+  font-weight: 700;
   margin: 0;
   padding: 0;
+}
+.loginDIV {
+  position: absolute;
+  left: 50%;
+  top: 50px;
+  margin-left: -150px;
+  text-align: center;
+  width: 300px;
+}
+.loginInput {
+  margin-top: 30px;
+}
+.loginYzm {
+  margin-top: 10px;
+  float: left;
+  width: 140px;
+  height: 60px;
+}
+.loginYzmButton {
+  margin-top: 10px;
+  cursor: pointer;
+  height: 60px;
+  line-height: 80px;
+  user-select: none;
 }
 </style>
