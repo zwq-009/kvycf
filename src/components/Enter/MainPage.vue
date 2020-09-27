@@ -10,15 +10,32 @@
       >
         <el-carousel-item class="zmdItem">
           <div class="zmdText">一站式客服管理<br /><br />大容量数据储存</div>
-          <el-button class="zmdButton" type="primary" round>
+          <el-button
+            class="zmdButton"
+            type="primary"
+            round
+            @click="ToCompanyPage"
+          >
             获取解决方案
           </el-button>
         </el-carousel-item>
         <el-carousel-item>
-          <el-button class="zmdButton" type="success" round>成为客服</el-button>
+          <el-button
+            class="zmdButton"
+            type="success"
+            round
+            @click="ToServicePage"
+            >成为客服</el-button
+          >
         </el-carousel-item>
         <el-carousel-item>
-          <el-button class="zmdButton" type="warning" round>加入我们</el-button>
+          <el-button
+            class="zmdButton"
+            type="warning"
+            round
+            @click="ToJoinUsPage"
+            >加入我们</el-button
+          >
         </el-carousel-item>
       </el-carousel>
       <div class="loginIntry">
@@ -139,7 +156,20 @@ export default {
       AdminVerify: ''
     }
   },
-  methods: {}
+  methods: {
+    ToCompanyPage() {
+      this.$router.push('/EnterSignUpPage/EnterCompanyPage')
+      this.$store.commit('Layout_EnterPage_ChangeChoisePage', '2')
+    },
+    ToServicePage() {
+      this.$router.push('/EnterSignUpPage/EnterServicePage')
+      this.$store.commit('Layout_EnterPage_ChangeChoisePage', '3')
+    },
+    ToJoinUsPage() {
+      this.$router.push('/EnterSignUpPage/EnterJoinUsPage')
+      this.$store.commit('Layout_EnterPage_ChangeChoisePage', '4')
+    }
+  }
 }
 </script>
 

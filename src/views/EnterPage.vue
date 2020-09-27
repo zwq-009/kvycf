@@ -2,14 +2,13 @@
   <el-container style="height:100%">
     <el-header style="padding:0px">
       <el-menu
-        :default-active="activeIndex2"
+        :default-active="$store.state.LayOut_EnterPage_NowChoisePage"
         class="el-menu-demo"
         mode="horizontal"
-        @select="handleSelect"
         background-color="black"
         text-color="#fff"
         active-text-color="#FF8C00"
-        router="true"
+        router
         style="z-index:1000"
       >
         <img class="logo" src="../img/LOGO.png" />
@@ -24,13 +23,25 @@
         <el-menu-item index="1" route="/" class="item">
           主页
         </el-menu-item>
-        <el-menu-item index="2" route="EnterSignUpPage" class="item">
+        <el-menu-item
+          index="2"
+          route="/EnterSignUpPage/EnterCompanyPage/EnterCompanyPageR1"
+          class="item"
+        >
           获取解决方案
         </el-menu-item>
-        <el-menu-item index="3" route="EnterSignUpPage" class="item">
+        <el-menu-item
+          index="3"
+          route="/EnterSignUpPage/EnterServicePage/EnterServicePageR1"
+          class="item"
+        >
           成为客服
         </el-menu-item>
-        <el-menu-item index="4" route="EnterSignUpPage" class="item">
+        <el-menu-item
+          index="4"
+          route="/EnterSignUpPage/EnterJoinUsPage"
+          class="item"
+        >
           加入我们
         </el-menu-item>
       </el-menu>
@@ -42,20 +53,7 @@
 </template>
 
 <script>
-export default {
-  data() {
-    return {
-      activeIndex: '0',
-      activeIndex2: '1'
-    }
-  },
-
-  methods: {
-    handleSelect(key, keyPath) {
-      console.log(key, keyPath)
-    }
-  }
-}
+export default {}
 </script>
 
 <style>
