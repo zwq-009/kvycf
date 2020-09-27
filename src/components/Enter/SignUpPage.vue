@@ -1,36 +1,66 @@
 <template>
-  <div class="block">
-    <el-carousel height="150px" arrow="never" trigger="click">
-      <el-carousel-item>
-        <el-button>1231234</el-button>
-      </el-carousel-item>
-      <el-carousel-item>
-        <el-button>456834</el-button>
-      </el-carousel-item>
-      <el-carousel-item>
-        <el-button>789321</el-button>
-      </el-carousel-item>
-    </el-carousel>
+  <div class="signupBackGround">
+    <div class="Mask">
+      <router-view></router-view>
+    </div>
   </div>
 </template>
 
 <style>
-.el-carousel__item h3 {
-  color: #475669;
-  font-size: 14px;
-  opacity: 0.75;
-  line-height: 150px;
-  margin: 0;
+.signupBackGround {
+  width: 100%;
+  height: 1000px;
+  background-image: url('../../img/EnterBackground.png');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+}
+.Mask {
+  position: absolute;
+  left: 50%;
+  margin-left: -450px;
+  width: 900px;
+  min-height: 1000px;
+  background-color: #ffffffcc;
+  text-align: center;
 }
 
-.el-carousel__item:nth-child(1) {
-  background-color: #99a9bf;
+.signUpImage {
+  position: absolute;
+  left: 50%;
+  top: 30px;
+  margin-left: -250px;
+  margin-bottom: 50px;
+  width: 500px;
+}
+.sourceImg {
+  width: 100px;
+  height: 100px;
+  float: left;
+}
+.arrow {
+  width: 150px;
+  height: 100px;
+}
+.targetImg {
+  width: 170px;
+  height: 93px;
+  float: right;
+}
+.joininHead {
+  margin-top: 150px;
+  font-size: 60px;
+  font-weight: 800;
+}
+.progress {
+  margin-top: 30px;
+}
+.signUpInnerPage {
+  margin-top: 50px;
 }
 
-.el-carousel__item:nth-child(2) {
-  background-color: #d3dce6;
-}
-.el-carousel__item:nth-child(3) {
-  background-color: blue;
+.signUpMsgText {
+  font-size: 20px;
+  font-weight: 600px;
 }
 </style>
