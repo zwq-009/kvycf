@@ -100,7 +100,7 @@ export default {
 
 <style>
   .el-aside {
-    width: 64px;
+    width: 64px!important;
     background-color: rgb(173, 182, 235);
     color: #333;
     height: 700px;
