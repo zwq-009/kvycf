@@ -1,6 +1,6 @@
 <template> 
-<el-container style="height: 707px; width: 866px;">
-  <aside class="el-aside" style="overflow:unset">
+<el-container class="ServicePage_el-container">
+  <el-aside class="ServicePage_el-aside"  style="overflow:unset">
     <div class="logo"><div class="img">Logo</div></div>
         <div class="nav-item">
             <i id="icon" class="el-icon-s-home"></i>
@@ -38,12 +38,12 @@
             <i id="icon" class="el-icon-switch-button"></i>
             <div class="tip">退出</div>
         </div>
-  </aside>
+  </el-aside>
   
-<header class="el-header">
+<el-header class="ServicePage_el-header">
   <div class="customer-info">
         <div class="head">
-            <img src="u94.svg" alt="" class="header">
+            <img src="u94.svg" alt="" class="hop">
             <span class="customer-name">凯文客服</span>
             <img src="u93.svg" alt="" class="tip">
         </div>
@@ -52,10 +52,10 @@
             <li class="statu">离线</li>
         </div>
     </div>
-    </header>
-    
-    <el-main>
-      <div :is="currentView"></div>
+    </el-header>
+    <el-main class="mainen"  >
+        <router-view></router-view>
+        <!-- <div :is="currentView"></div> -->
     </el-main>
 </el-container>
 </template>
@@ -81,11 +81,14 @@ export default {
 </script>
 
 <style>
-  .el-aside {
-  width: 64px;
+.ServicePage_el-container{
+height: 707px;
+width: 866px;
+}
+  .ServicePage_el-aside {
+  width: 64px!important;
   height: 715px;
   background-color: rgba(23, 28, 58, 1);
-
   }
 .logo{
     margin-left: 8px;
@@ -161,21 +164,24 @@ export default {
     top: 5px;
     left: -16px;
 }
-
-.el-header {
-    background-color: #e1e6ee;
+  
+  .ServicePage_el-header {
+    background-color: #bcd1f3;
     color: #333;
     line-height: 60px;
     width: 743px;
     height: 64px;
     text-align: right;
     font-size: 12px;
+    position: fixed;
+    top: 0px;
+    left: 64px;
   }
   .customer-info{
             margin:0;
             position: relative;
             width: 157px;
-            height: 0;
+            height:64px;
             float: right;
             right: 0;
             }
@@ -191,12 +197,12 @@ export default {
     border: none;
     border-radius: 2px;
         }
-    .header .tip{
+    .hop .tip{
      font-size: 15px;
       position: relative;
       top: -16px;
       }
-.status{
+      .status{
     display:none;
     background-color: #fff;
     position:absolute;
@@ -204,8 +210,15 @@ export default {
     top:65px;
     padding-right: 10px;
     right: 0;
-}
-  .customer-info:hover .status{
+    }
+    .customer-info:hover .status{
        display: block;
     }
+
+
+.mainen{
+    background-color: rgb(160, 206, 233);
+}
+
+
 </style>
