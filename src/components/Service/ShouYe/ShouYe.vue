@@ -1,6 +1,11 @@
 <template>
   <div class="page">
-    <div class="box"></div>
+    <div class="box">
+      <div class="box box1" router="./ShuJu1.vue"></div>
+      <div class="box box2"></div>
+      <div class="box box3"></div>
+      <div class="box box4"></div>
+    </div>
   </div>
 </template>
 
@@ -10,42 +15,49 @@ export default {}
 
 <style>
 .page {
-  width: 1100px;
-  height: 100%;
+  width: 1500px;
+  height: 1100px;
+  background-color: rgb(226, 23, 23);
 }
-.box box1 {
-  width: 300px;
-  height: 80px;
-  position: fixed;
-  top: 20px;
-  left: 400px;
+.box {
+  width: 500px;
+  height: 300px;
+  position: absolute;
+  top: 100px;
+  left: 500px;
+  background-color: black;
+  
 }
-.box box2 {
-  width: 150px;
-  height: 150px;
-  position: fixed;
-  top: 120px;
-  left: 100px;
+.box1 {
+  width: 200px;
+  height: 200px;
+  position: absolute;
+  top: 500px;
+  left: -300px;
+  background-color: blue;
 }
-.box box3 {
-  width: 150px;
-  height: 150px;
-  position: fixed;
-  top: 120px;
-  left: 350px;
+.box2 {
+  width: 200px;
+  height: 200px;
+  position: absolute;
+  top: 500px;
+  left: 0px;
+  background-color: green;
 }
-.box box4 {
-  width: 150px;
-  height: 150px;
-  position: fixed;
-  top: 120px;
+.box3 {
+  width: 200px;
+  height: 200px;
+  position: absolute;
+  top: 500px;
+  left: 300px;
+  background-color: darkseagreen;
+}
+.box4 {
+  width: 200px;
+  height: 200px;
+  position: absolute;
+  top: 500px;
   left: 600px;
-}
-.box box5 {
-  width: 150px;
-  height: 150px;
-  position: fixed;
-  top: 120px;
-  left: 850px;
+  background-color: midnightblue;
 }
 </style>
